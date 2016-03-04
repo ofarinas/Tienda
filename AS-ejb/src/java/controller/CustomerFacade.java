@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cl;
+package controller;
 
-import entity.PurchaseOrder;
+import cl.CustomerFacadeRemote;
+import entity.Customer;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -15,7 +16,7 @@ import javax.persistence.PersistenceContext;
  * @author Osvaldo
  */
 @Stateless
-public class PurchaseOrderFacade extends AbstractFacade<PurchaseOrder> implements cl.PurchaseOrderFacadeRemote {
+public class CustomerFacade extends AbstractFacade<Customer> implements CustomerFacadeRemote {
 
     @PersistenceContext(unitName = "AS-ejbPU")
     private EntityManager em;
@@ -25,8 +26,8 @@ public class PurchaseOrderFacade extends AbstractFacade<PurchaseOrder> implement
         return em;
     }
 
-    public PurchaseOrderFacade() {
-        super(PurchaseOrder.class);
+    public CustomerFacade() {
+        super(Customer.class);
     }
     
 }

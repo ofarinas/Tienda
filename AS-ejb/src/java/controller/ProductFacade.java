@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cl;
+package controller;
 
-import entity.ProductCode;
+import entity.Product;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -15,7 +15,7 @@ import javax.persistence.PersistenceContext;
  * @author Osvaldo
  */
 @Stateless
-public class ProductCodeFacade extends AbstractFacade<ProductCode> implements cl.ProductCodeFacadeRemote {
+public class ProductFacade extends AbstractFacade<Product> implements cl.ProductFacadeRemote {
 
     @PersistenceContext(unitName = "AS-ejbPU")
     private EntityManager em;
@@ -25,8 +25,8 @@ public class ProductCodeFacade extends AbstractFacade<ProductCode> implements cl
         return em;
     }
 
-    public ProductCodeFacade() {
-        super(ProductCode.class);
+    public ProductFacade() {
+        super(Product.class);
     }
     
 }

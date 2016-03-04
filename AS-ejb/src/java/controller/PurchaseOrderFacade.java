@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cl;
+package controller;
 
-import entity.MicroMarket;
+import entity.PurchaseOrder;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -15,7 +15,7 @@ import javax.persistence.PersistenceContext;
  * @author Osvaldo
  */
 @Stateless
-public class MicroMarketFacade extends AbstractFacade<MicroMarket> implements MicroMarketFacadeRemote {
+public class PurchaseOrderFacade extends AbstractFacade<PurchaseOrder> implements cl.PurchaseOrderFacadeRemote {
 
     @PersistenceContext(unitName = "AS-ejbPU")
     private EntityManager em;
@@ -25,8 +25,8 @@ public class MicroMarketFacade extends AbstractFacade<MicroMarket> implements Mi
         return em;
     }
 
-    public MicroMarketFacade() {
-        super(MicroMarket.class);
+    public PurchaseOrderFacade() {
+        super(PurchaseOrder.class);
     }
     
 }
